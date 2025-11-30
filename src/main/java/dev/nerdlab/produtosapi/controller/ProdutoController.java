@@ -46,7 +46,7 @@ public class ProdutoController {
         produtoRepository.save(prod);
     }
 
-    @GetMapping
+    @GetMapping(value = "/produtos", params = "nome")
     public List<Produto> buscarPorParam(@RequestParam("nome") String nome){
         return produtoRepository.findByNome(nome);
     }
